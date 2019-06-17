@@ -16,7 +16,7 @@ public class array_6_16_Sudoku_checked_problem {
         }
 
         //check colum
-        for(int j = 0; j < partialAssignment.size(); ++j ) {
+        for(int j = 0; j < partialAssignment.size(); +r+j ) {
             if(hasDuplicate(partialAssignment, 0, partialAssignment.size(), j, j+1)) {
                 return false;
             }
@@ -88,16 +88,10 @@ public class array_6_16_Sudoku_checked_problem {
         }
         for(int row = (i / 3) * 3; row < (i / 3 + 1) * 3; ++row) {
             for(int col = (j / 3) * 3; col < (j / 3 + 1) * 3; ++col) {
-                if(row == i && col == j) return false;
-                if(board[row][col] == board[i][j]) return true;
+                if(row == i && col == j) continue;
+                if(board[row][col] == board[i][j]) return false;
             }
         }
-    }
-
-
-
-
-    public static void main(String args[]){
-
+        return true;
     }
 }
