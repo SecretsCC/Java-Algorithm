@@ -16,7 +16,7 @@ public class array_6_16_Sudoku_checked_problem {
         }
 
         //check colum
-        for(int j = 0; j < partialAssignment.size(); +r+j ) {
+        for(int j = 0; j < partialAssignment.size(); ++j ) {
             if(hasDuplicate(partialAssignment, 0, partialAssignment.size(), j, j+1)) {
                 return false;
             }
