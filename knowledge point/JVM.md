@@ -19,9 +19,9 @@
 
 ​	Java程序员把内存的控制权利交给Java虚拟机
 
-​		![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/Screen%20Shot%202019-07-08%20at%207.10.21%20AM.png>)
+​		![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/Java%20memory%20area.png>)
 
-​			![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/Screen%20Shot%202019-07-08%20at%207.10.30%20AM.png>)
+​			![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/Java%20memory%20area2.png>)
 
 __线程私有__:										 __线程共享__:
 
@@ -99,5 +99,120 @@ __线程私有__:										 __线程共享__:
 
 ###    1. 对象的创建
 
-​		
+​			![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/object%20creat%20process.png>)
 
+	##### 	Step1: 类加载检查	
+
+​		虚拟机遇到一条 new 指令时，首先将去检查这个指令的参数是否能在常量池中定位到这个类的符号引用，并且检查这个符号引用代表的类是否已被加载过、解析和初始化过。如果没有，那必须先执行相应的类加载过程。
+
+#####  	Step2: 分配内存
+
+​		类加载通过后, 为新生对象分配内存, 所需内存大小在类加载后便可确定. __分配方式__: __指针碰撞__,__空闲列表__. 		选择哪种方式由Java堆是否规整决定, 而Java堆是否规整又由所采用的垃圾收集器是否有压缩整理功能决定.
+
+​	![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/memory%20allocation.png>)
+
+
+
+##### 	Step3: 初始化零值 
+
+​		保证了对象的实例字段在Java代码中可以不赋初始值直接使用
+
+	##### 	Step4: 设置对象头
+
+​		虚拟机对对象必要的设置, 例如这个对象是哪个类的实例, 如何才能找到类的元数据信息, 对象的哈希吗, 对象的GC分代年龄等信息.这些信息都保存在对象头中.
+
+##### 	Step5: 执行Init方法
+
+​		执行new指令之后执行init方法,把对象按照程序员的意愿进行初始化,一个真正的对象才算完全产出来
+
+
+
+### 2.对象的内存布局
+
+​	对象在内存中分为3块区域: __对象头,实例数据,对齐填充__
+
+​	对象头包含两部分信息, 第一部分用于存储对象自身的自身运行时数据, 另一部分是类型指针, 虚拟机通过这个指针来确定这个对象是哪个类的实例
+
+​	实例数据部分是对象那个真正存储的有效信息
+
+​	对齐填充部分不是必然存在,仅仅起占位作用,8字节的倍数
+
+### 3.对象的访问定位
+
+​	Java程序通过栈上的reference数据来操作堆上的具体对象. 对象的访问由虚拟机实现而定, 主流访问方式__使用句柄__ 和__直接指针__ 
+
+​	![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/handle%20access.png>)
+
+![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/director%20pointer.png>)
+
+​	**这两种对象访问方式各有优势。使用句柄来访问的最大好处是 reference 中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而 reference 本身不需要修改。使用直接指针访问方式最大的好处就是速度快，它节省了一次指针定位的时间开销。**
+
+
+
+# 重点补充
+
+### 1. String类和常量池
+
+​	Stirng对象两种创建方式:
+
+```Java
+	String str1 = "abcd";	//先检查字符串常量池中有没有"abcd",如果没有,则创建一个，然后 str1 指向字符串常量池中的对象，如果有，则直接将 str1 指向"abcd"
+	String str2 = new String("abcd"); //堆中创建一个新的对象
+	String str3 = new String("abcd"); //堆中创建一个新的对象
+	System.out.println(str1 == str2) //false
+    System..outprintln(str2 == str3) //false
+    //只要使用new, 便需要创建新的对象
+```
+
+
+
+![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/data%20storage.png>)
+
+ - 直接使用双引号声明出来的String对象存储在常量池中
+
+ - 如果不是用双引号声明, 可以使用String 提供的intern方法, String.intern()是一个Native方法, 作用是:如果常量池中已经包含一个等于此String对象内容的字符串, 则返回常量池中的引用, 如果没有, 在常量池中创建与此String内容相同的字符串,并返回常量池中创建的字符串的引用
+
+ - ```Java
+   	      String s1 = new String("计算机");
+   	      String s2 = s1.intern();
+   	      String s3 = "计算机";
+   	      System.out.println(s2);//计算机
+   	      System.out.println(s1 == s2); //false，因为一个是堆内存中的 String 对象一个是常量池中的 String 对象，
+   	      System.out.println(s3 == s2);//true，因为两个都是常量池中的 String 对象
+   ```
+
+```java
+		  String str1 = "str";
+		  String str2 = "ing";
+		 
+		  String str3 = "str" + "ing";//常量池中的对象
+		  String str4 = str1 + str2; //在堆上创建的新的对象	  
+		  String str5 = "string";//常量池中的对象
+		  System.out.println(str3 == str4);//false
+		  System.out.println(str3 == str5);//true
+		  System.out.println(str4 == str5);//false
+```
+
+__String s1 = new String("abc");这句话创建了几个字符串对象？__
+
+​	**将创建 1 或 2 个字符串。如果池中已存在字符串文字“abc”，则池中只会创建一个字符串“s1”。如果池中没有字符串文字“abc”，那么它将首先在池中创建，然后在堆空间中创建，因此将创建总共 2 个字符串对象。**
+
+
+
+### 2.8种基本类型的包装类和常量池
+
+​	Byte, Short,Integer,Long,Character,Boolean 这五种包装类实现了常量池技术,默认创建了数值[-128,127]
+
+​	Float,Double并没有实现常量池技术
+
+```Java
+		Integer i1 = 33;
+		Integer i2 = 33;
+		System.out.println(i1 == i2);// 输出 true
+		Integer i11 = 333;
+		Integer i22 = 333;
+		System.out.println(i11 == i22);// 输出 false
+		Double i3 = 1.2;
+		Double i4 = 1.2;
+		System.out.println(i3 == i4);// 输出 false
+```
