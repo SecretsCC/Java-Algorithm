@@ -92,7 +92,7 @@ public class ReferenceCountingGc {
 
 ​	通过一系列成为GC Roots的对象作为起点, 从这些节点开始向下搜索, 节点所走过的路径称为引用链, 当一个对象到GC Roots没有任何引用链相连的话,证明对象不可用
 
-![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/reachability%20analysis.JPEG>)
+![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/reachability%20analysis.jpeg>)
 
 ​		即使在可达性分析法中不可达的对象，也并非是“非死不可”的，这时候它们暂时处于“缓刑阶段”，要真正宣告一个对象死亡，至少要经历两次标记过程；可达性分析法中不可达的对象被第一次标记并且进行一次筛选，筛选的条件是此对象是否有必要执行 finalize 方法。当对象没有覆盖 finalize 方法，或 finalize 方法已经被虚拟机调用过时，虚拟机将这两种情况视为没有必要执行。
 
@@ -153,4 +153,125 @@ public class ReferenceCountingGc {
 
 	#### 1. 标记-清除算法(mark sweep)
 
-​	
+​	分为标记和清除阶段:首先标出所有需要回收的对象, 标记完成后统一回收所有被标记的对象, 是最基础的收集算法,有两个明显的问题:__效率问题__, __空间问题__
+
+​	![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/mark%20sweep.jpeg>)
+
+
+
+#### 2. 复制算法(copying)
+
+​	为了解决效率问题,"复制"收集算法出现了.它将内存分为大小相同的两块, 每次使用其中的一块. 当这一块的内存使用完成后,九江还存活的对象复制到一边去, 然后再把使用的空间一次清理掉.这样就使每次的内存回收都是对内存区间的一般进行回收.
+
+​	![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/copying.jpeg>)
+
+
+
+#### 3.标记-整理算法(mark-compact)
+
+​	标记过程与标记-清除算法一样, 但后续步骤不是直接对可回收对象回收,而是让所有的对象向一端移动,然后直接清理掉端边界以外的内存
+
+​	![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/mark%20compact.jpeg>)	
+
+#### 4. 分代收集算法
+
+​	根据年代选择合适的垃圾收集算法
+
+​	**比如在新生代中，每次收集都会有大量对象死去，所以可以选择复制算法，只需要付出少量对象的复制成本就可以完成每次垃圾收集。而老年代的对象存活几率是比较高的，而且没有额外的空间对它进行分配担保，所以我们必须选择“标记-清除”或“标记-整理”算法进行垃圾收集。**
+
+
+
+## 垃圾收集器
+
+​	我们能做的就是根据具体应用场景选择适合自己的垃圾收集器
+
+#### 1. Serial 收集器
+
+​	![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/serial%20GC.jpeg>)	
+
+​	简单高效, 单线程, 在进行垃圾收集工作的时候必须暂停其他所有的工作线程
+
+#### 2. ParNew收集器
+
+​	![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/ParNew%20GC.jpeg>)
+
+​	其实就是SerialGC的多线程版本, __新生代采用复制算法,老年代采用标记-整理算法__
+
+​	它是许多运行在Server模式下虚拟机的首要选择,除了Serial收集器外, 只有它能和CMS收集器配合工作
+
+​	__并行和并发__:
+
+​		__并行(parallel)__: 指多条垃圾收集线程并行工作,但此用户线程仍然处于等待状态
+
+​		__并发(Concurrent)__: 指用户线程与垃圾收集线程同时执行(但不一定是并行, 可能会交替执行),用户程序在继续运行,垃圾收集器运行在另一个CPU上
+
+#### 3. Parrallel Scavenge 收集器
+
+​	使用复制算法的多线程收集器, 看上去几乎和ParNew一样
+
+```
+-XX:+UseParallelGC 
+
+    使用 Parallel 收集器+ 老年代串行
+
+-XX:+UseParallelOldGC
+
+    使用 Parallel 收集器+ 老年代并行
+```
+
+​	该收集器关注点是吞吐量(高效利用CPU). CMS等垃圾收集器的关注点更多是用户线程的停顿时间(提高用户体验).__吞吐量(throughput)就是CPU中用于运行用户代码的时间与CPU总消耗时间的比值__
+
+![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/PParrallel%20Scavenge%20GC.jpeg>)
+
+#### 4. Serial Old 收集器
+
+​	Serial收集器的老年代版本, 同样是一个单线程收集器.两个用途: 一种在JDK1.5以及之前版本和Parallel Scavenge收集器搭配使用, 另一种作为CMS收集器的后备方案
+
+#### 5. Parallel Old收集器
+
+​	Parallel Scavenge收集器的老年代版本. 使用标记-整理算法
+
+#### 6. CMS 收集器
+
+​	CMS(Concurrent Mark Sweep) 收集器是一种以获取最短回收停顿时间为目标的收集器. 它非常符合在注重用户体验上的应用使用
+
+​	CMS是HotSpot虚拟机第一款真正意义上的并发收集器, 它第一次实现了让垃圾收集线程与用户线程(基本)同时工作
+
+​	是用__标记清除__算法实现,整个过程分为四个步骤:
+
+- **初始标记：** 暂停所有的其他线程，并记录下直接与 root 相连的对象，速度很快 ；
+
+- **并发标记：** 同时开启 GC 和用户线程，用一个闭包结构去记录可达对象。但在这个阶段结束，这个闭包结构并不能保证包含当前所有的可达对象。因为用户线程可能会不断的更新引用域，所以 GC 线程无法保证可达性分析的实时性。所以这个算法里会跟踪记录这些发生引用更新的地方。
+
+- **重新标记：** 重新标记阶段就是为了修正并发标记期间因为用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间一般会比初始标记阶段的时间稍长，远远比并发标记阶段时间短
+
+- **并发清除：** 开启用户线程，同时 GC 线程开始对为标记的区域做清扫。
+
+  ![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/CMS.jpeg>)
+
+从它的名字就可以看出它是一款优秀的垃圾收集器，主要优点：**并发收集、低停顿**。但是它有下面三个明显的缺点：
+
+- **对 CPU 资源敏感；**
+- **无法处理浮动垃圾；**
+- **它使用的回收算法-“标记-清除”算法会导致收集结束时会有大量空间碎片产生。**
+
+
+
+#### 7. G1 收集器
+
+#### 	**G1 (Garbage-First) 是一款面向服务器的垃圾收集器,主要针对配备多颗处理器及大容量内存的机器. 以极高概率满足 GC 停顿时间要求的同时,还具备高吞吐量性能特征.**	被视为 JDK1.7 中 HotSpot 虚拟机的一个重要进化特征。它具备一下特点：
+
+- **并行与并发**：G1 能充分利用 CPU、多核环境下的硬件优势，使用多个 CPU（CPU 或者 CPU 核心）来缩短 Stop-The-World 停顿时间。部分其他收集器原本需要停顿 Java 线程执行的 GC 动作，G1 收集器仍然可以通过并发的方式让 java 程序继续执行。
+- **分代收集**：虽然 G1 可以不需要其他收集器配合就能独立管理整个 GC 堆，但是还是保留了分代的概念。
+- **空间整合**：与 CMS 的“标记--清理”算法不同，G1 从整体来看是基于“标记整理”算法实现的收集器；从局部上来看是基于“复制”算法实现的。
+- **可预测的停顿**：这是 G1 相对于 CMS 的另一个大优势，降低停顿时间是 G1 和 CMS 共同的关注点，但 G1 除了追求低停顿外，还能建立可预测的停顿时间模型，能让使用者明确指定在一个长度为 M 毫秒的时间片段内。
+
+G1 收集器的运作大致分为以下几个步骤：
+
+- **初始标记**
+- **并发标记**
+- **最终标记**
+- **筛选回收**
+
+**G1 收集器在后台维护了一个优先列表，每次根据允许的收集时间，优先选择回收价值最大的 Region(这也就是它的名字 Garbage-First 的由来)**。这种使用 Region 划分内存空间以及有优先级的区域回收方式，保证了 GF 收集器在有限时间内可以尽可能高的收集效率（把内存化整为零）。
+
