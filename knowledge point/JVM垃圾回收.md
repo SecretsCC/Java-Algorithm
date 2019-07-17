@@ -60,6 +60,28 @@
 
 
 
+
+
+### Parameters of memory
+
+![image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/parameters.png>)
+
+-Xms设置堆的最小空间大小。
+
+-Xmx设置堆的最大空间大小。
+
+-XX:NewSize设置新生代最小空间大小。
+
+-XX:MaxNewSize设置新生代最大空间大小。
+
+-XX:PermSize设置永久代最小空间大小。
+
+-XX:MaxPermSize设置永久代最大空间大小。
+
+-Xss设置每个线程的堆栈大小。
+
+
+
 ## 对象已经死亡?
 
 ​	堆中几乎存放所有对象的实例, 对堆垃圾回收前的第一步就是要判断哪些对象已经死亡
