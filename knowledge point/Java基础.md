@@ -182,4 +182,201 @@ JRE是Java运行时环境
 
 ## ==与equals
 
-​	==: 作用是判断两个对象的地址是不是相等。
+​	==: 作用是判断两个对象的地址是不是相等。即判断两个对象是不是同一个对象(基本数据类型==比较的是值,引用数据类型==比较的是内存地址)
+
+​	equals(): 作用是判断两个对象是否相等,一般有两种使用情况:
+
+  - 情况1: 类没有覆盖equals()方法,则通过equals()比较两个对象时,等价于==
+  - 情况2: 类覆盖了equals()方法, 一般通过覆盖equals()方法比较两个对象的内容是否相等, 若内容相等返回true
+
+String中的equals方法是被从写过的,比较的是对象的值
+
+
+
+## hashCode与equals
+
+**为什么重写equals时必须重写hashCode?**
+
+**hashCode()介绍:**
+
+​	hashCode是获取哈希码,也成为散列码;实际上返回的是一个int整数,作用是确定该对象在哈希表中索引位置
+
+​	散列表是键值对,能根据键快速检索出值
+
+**为什么要有hashCode**
+
+​	HashSet通过hashcode来判断对象有没有重复出现,如果有相同的hashcode对象,会调用equals()方法检查两个对象是否真的相同,如果相同,HashSet不会让其加入,如果不同,会散列到其他位置。这样大大减少了equals的次数,提高了运行的执行速度
+
+
+
+#### hashCode()和equals()的相关规定
+
+1. 如果两个对象相等,则hashcode一定相同
+2. 两个对象相等,调用equals方法都返回true
+3. 两个对象有相同的hashcode不一定是相等的
+4. **如果equals被覆盖过,hashCode也必须被覆盖过**
+5. hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写hashcode(),则该class的两个对象无论如何都不会相等
+
+
+
+## 线程、程序、进程的基本概念以及关系
+
+​	线程与进程相似, 但线程比进程更小的执行单位。一个进程在其执行过程中可以产生多个线程。
+
+​	与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源,所以系统在产生一个线程,或在各个线程之间切换工作时,负担要比进程小得多
+
+
+
+​	**程序**是含有指令和数据的文件,被存储在磁盘或其他的数据存储设备中,也就是说程序是静态的代码
+
+​	**进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。简单来说，一个进程就是一个执行中的程序，它在计算机中一个指令接着一个指令地执行着，同时，每个进程还占有某些系统资源如CPU时间，内存空间，文件，文件，输入输出设备的使用权等等。换句话说，当程序在执行时，将会被操作系统载入内存中。 线程是进程划分成的更小的运行单位。线程和进程最大的不同在于基本上各进程是独立的，而各线程则不一定，因为同一进程中的线程极有可能会相互影响。从另一角度来说，进程属于操作系统的范畴，主要是同一段时间内，可以同时执行一个以上的程序，而线程则是在同一程序内几乎同时执行一个以上的程序段。
+
+
+
+## 线程基本状态
+
+​	![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/Thread%20state.png>)
+
+​	
+
+## Final关键字的总结
+
+主要用在三个地方:变量、方法、类
+
+ 	1. 对于基本数据类型,一旦初始化之后便不能更改;如果引用类型的变量, 则在初始化之后不能再让其指向另一个对象
+ 	2. 修饰一个类时,表示这个类不能被继承。final类中所有成员方法都会被隐式的指定为final的方法
+ 	3. 使用final方法的原因有两个: 第一个是把方法锁定,以防任何继承类修改;第二个是为了效率。
+
+
+
+## 异常处理
+
+​	![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/exception%20handling.png>)
+
+​	所有异常都有一个共同的祖先java.lang包中的Throwable类。**Throwable**有两个重要的子类**Exception**和**Error**
+
+​	**Error:是程序无法处理的错误**, 表示运行应用程序中较严重的问题。JVM一般会选择线程终止
+
+​	**Exception:**是程序本身可以处理的异常
+
+​	用try,catch,finally块来处理异常
+
+- **try 块：**用于捕获异常。其后可接零个或多个catch块，如果没有catch块，则必须跟一个finally块。
+- **catch 块:** 用于处理try捕获到的异常。
+- **finally 块：**无论是否捕获或处理异常，finally块里的语句都会被执行。当在try块或catch块中遇到return语句时，finally语句块将在方法返回之前被执行。
+
+	#### Throwable类常用方法
+
+​	public string getMessage():返回异常发生时的详细信息
+
+​	public string toString(): 返回异常发生时的简要描述
+
+​	public string getLocalizedMessage():返回异常对象的本地化信息
+
+​	public void printStackTrace(): 在控制台上打印Throwable对象封装的异常信息
+
+
+
+## Java序列化中如果有些字段不想序列化怎么办
+
+对于不想序列化的变量,使用transient关键字修饰
+
+
+
+## 获取键盘输入常用的两种方法
+
+ 1. 通过Scanner
+
+    ```java
+    Scanner input = new Scanner(System.in);
+    String s  = input.nextLine();
+    input.close();
+    ```
+
+2. 通过BufferReader
+
+   ```java
+   BufferedReader input = new BufferedReader(new InputStreamReader(System.in)); 
+   String s = input.readLine(); 
+   ```
+
+
+
+## Java中IO流分为几种?BIO,NIO,AIO区别
+
+- 按照流向分,分为输入流和输出流
+
+- 按照操作单元划分, 划分为字节流和字符流
+
+- 按照流的角色划分为节点流和处理流
+
+  ![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/stream.png>)
+
+  ![Image text](<https://github.com/SecretsCC/Java-Algorithm/blob/master/knowledge%20point/images/stream2.png>)
+
+  **BIO(Blocking I/O)**:
+
+  **NIO(New I/O)**:
+
+  **AIO(Asynchronous I/O)**: 
+
+
+
+## 常见关键字总结
+
+	### Static关键字
+
+​	四种使用场景:
+
+  		1. **修饰成员变量和成员方法:** 被static修饰的成员属于类,不属于这个类的某个对象,被类中所有对象共享,可以并且建议通过类名调用。被static声明的成员变量属于静态成员变量,存放在java内存区域的方法区
+  		2. **静态代码块:** 静态代码块定义在类中方法外,静态代码块在非静态代码块之前执行(静态代码块->非静态代码块->构造方法),该类不管创建多少对象,静态代码块只执行一次
+  		3. **静态内部类(static修饰类的话只能修饰内部类):** 静态内部类与非静态内部类之间一个最大的区别: 非静态内部类在编译完成之后会隐含的保存着一个引用,该引用指向创建它的外围类,但是静态内部类却没有。没有这个引用就意味着: 1.它的创建是不需要外围类的创建 2.他不能使用任何外围类的非静态成员变量和方法
+  		4. **静态导包:** import static 这两个关键字连用可以导入某个类中指定静态资源,并且不需要使用类名调用类中静态成员,可以直接使用类中静态成员变量和成员方法
+
+
+
+### This关键字
+
+​	this关键字用于应用类的当前实例
+
+```java
+class Manager {
+    Employees[] employees;
+     
+    void manageEmployees() {
+        int totalEmp = this.employees.length;
+        System.out.println("Total employees: " + totalEmp);
+        this.report();
+    }
+     
+    void report() { }
+}
+```
+
+此关键字可选,如果上面的实例在不适用此关键字的情况下表现相同。但是,使用此关键字可能会更易读或易懂
+
+
+
+### Super关键字
+
+​	super关键字用于从子类访问父类的变量和方法
+
+```java
+public class Super {
+    protected int number;
+     
+    protected showNumber() {
+        System.out.println("number = " + number);
+    }
+}
+ 
+public class Sub extends Super {
+    void bar() {
+        super.number = 10;
+        super.showNumber();
+    }
+}
+```
+
+- 在构造器中使用 `super（）` 调用父类中的其他构造方法时，该语句必须处于构造器的首行，否则编译器会报错。另外，this 调用本类中的其他构造方法时，也要放在首行。
+- this、super不能用在static方法中。
