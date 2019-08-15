@@ -7,7 +7,6 @@ import java.util.Stack;
 
 public class PostOrder {
     public static List<Integer> PostOrder(TreeNode root) {
-        public List<Integer> postorderTraversal(TreeNode root) {
             LinkedList<Integer> ans = new LinkedList<>();
             Stack<TreeNode> stack = new Stack<>();
             if (root == null) return ans;
@@ -24,9 +23,5 @@ public class PostOrder {
                 }
             }
             return ans;
-        }
-
-
-
     }
 }

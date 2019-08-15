@@ -3,10 +3,10 @@ package LinkedLists;
 import java.util.List;
 
 class ListNode<T> {
-    public T data;
+    public int data;
     public ListNode<T> next;
 
-    public ListNode(T a) {
+    public ListNode(int a) {
         this.data = a;
         this.next = null;
     }

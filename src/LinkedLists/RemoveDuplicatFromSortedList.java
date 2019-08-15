@@ -7,8 +7,8 @@ public class RemoveDuplicatFromSortedList {
         ListNode curr = head;
 
         while(curr != null && curr.next != null) {
-            if(curr.val == curr.next.val) {
-                while(curr.next != null && curr.val == curr.next.val) {
+            if(curr.data == curr.next.data) {
+                while(curr.next != null && curr.data == curr.next.data) {
                     curr = curr.next;
                 }
                 curr = curr.next;

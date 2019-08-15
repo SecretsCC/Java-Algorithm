@@ -8,8 +8,8 @@ public class AddTwoNumber {
         int plus = 0;
 
         while(l1 != null || l2 != null) {
-            int x1 = l1 == null ? 0 : l1.val;
-            int x2 = l2 == null ? 0 : l2.val;
+            int x1 = l1 == null ? 0 : l1.data;
+            int x2 = l2 == null ? 0 : l2.data;
             int sum = x1 + x2 + plus;
 
             plus = (sum) / 10;
