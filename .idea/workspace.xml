@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f17ec26-94c9-4e43-b7e2-3afc2c4596f8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/BSTIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/BinaryTreeMaximumPathSum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/CloneGraph.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/FriendsOfAppropriateAges.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/MonotonicArray.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/OneEditDistance.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/VersionControl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/AddString.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/CheckCompletenessOfBinayTree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/DiameterOfBinaryTree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/IntersectionOfTwoArray.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/LongestArithmeticSequence.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/MergeIntervals.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/MergeSortedArray.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/facebook/NextPermutation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,11 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="IntervalListIntersection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/IntervalListIntersection.java">
+      <file leaf-file-name="MergeKSortedList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/MergeKSortedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-263">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MergeIntervals.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/MergeIntervals.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="12" selection-end-column="12" />
+              <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,44 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValidBinarySearchTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/ValidBinarySearchTree.java">
+      <file leaf-file-name="IntersectionOfTwoArray.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/IntersectionOfTwoArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+            <state relative-caret-position="266">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonotonicArray.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/MonotonicArray.java">
+      <file leaf-file-name="CheckCompletenessOfBinayTree.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/CheckCompletenessOfBinayTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#89#90#0" expanded="true" />
-                <element signature="e#142#143#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OneEditDistance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/OneEditDistance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CloneGraph.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/facebook/CloneGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="323">
+              <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,31 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendsOfAppropriateAges.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/FriendsOfAppropriateAges.java">
+      <file leaf-file-name="AddString.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/AddString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="475">
+              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="isPalindrom_2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/isPalindrom_2.java">
+      <file leaf-file-name="LongestArithmeticSequence.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/facebook/LongestArithmeticSequence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LongestSubstringWithAtMostKDistinctCharacters.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/LongestSubstringWithAtMostKDistinctCharacters.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="19" column="33" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="418">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,27 +88,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BSTIterator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/BSTIterator.java">
+      <file leaf-file-name="AccountsMerge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/AccountsMerge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#712#713#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="418">
+              <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinaryTreeMaximumPathSum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/facebook/BinaryTreeMaximumPathSum.java">
+      <file leaf-file-name="NextPermutation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/NextPermutation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            <state relative-caret-position="174">
+              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeetingRoom.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/MeetingRoom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeetingRooms_2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/facebook/MeetingRooms_2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="21" column="25" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="21" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -166,15 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/LinkedLists/RemoveLinkedListElements.java" />
-        <option value="$PROJECT_DIR$/src/Tree/PalindromePartitioning.java" />
-        <option value="$PROJECT_DIR$/src/Tree/PermutationsII.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Permutations.java" />
-        <option value="$PROJECT_DIR$/src/Tree/combinations.java" />
-        <option value="$PROJECT_DIR$/src/Tree/combinationsSum.java" />
-        <option value="$PROJECT_DIR$/src/Tree/combinationSumII.java" />
-        <option value="$PROJECT_DIR$/src/Tree/CombinationSumIII.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Subset.java" />
         <option value="$PROJECT_DIR$/src/Tree/BinaryWatch.java" />
         <option value="$PROJECT_DIR$/src/Tree/wordSearch.java" />
         <option value="$PROJECT_DIR$/src/Tree/NumberofIslands.java" />
@@ -217,6 +200,15 @@
         <option value="$PROJECT_DIR$/src/facebook/MonotonicArray.java" />
         <option value="$PROJECT_DIR$/src/facebook/OneEditDistance.java" />
         <option value="$PROJECT_DIR$/src/facebook/CloneGraph.java" />
+        <option value="$PROJECT_DIR$/src/facebook/DiameterOfBinaryTree.java" />
+        <option value="$PROJECT_DIR$/src/facebook/MeargeSortedArray.java" />
+        <option value="$PROJECT_DIR$/src/facebook/MergeSortedArray.java" />
+        <option value="$PROJECT_DIR$/src/facebook/NextPermutation.java" />
+        <option value="$PROJECT_DIR$/src/facebook/MergeIntervals.java" />
+        <option value="$PROJECT_DIR$/src/facebook/IntersectionOfTwoArray.java" />
+        <option value="$PROJECT_DIR$/src/facebook/CheckCompletenessOfBinayTree.java" />
+        <option value="$PROJECT_DIR$/src/facebook/AddString.java" />
+        <option value="$PROJECT_DIR$/src/facebook/LongestArithmeticSequence.java" />
       </list>
     </option>
   </component>
@@ -455,15 +447,15 @@
       <workItem from="1569458219652" duration="5856000" />
       <workItem from="1569604249034" duration="556000" />
       <workItem from="1570218068870" duration="2048000" />
-      <workItem from="1570384982629" duration="4253000" />
+      <workItem from="1570384982629" duration="10409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200183000" />
+    <option name="totallyTimeSpent" value="206339000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="826" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="825" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -512,62 +504,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Tree/combinationsSum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/PathSumIII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Permutations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/combinationSumII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/CombinationSumIII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Subset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryWatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/NumberofIslands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree/wordSearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
@@ -688,20 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/facebook/MeetingRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facebook/MeetingRooms_2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/facebook/ExpressionAddOperator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -720,13 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facebook/AccountsMerge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -759,14 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/facebook/MergeKSortedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -906,7 +813,109 @@
     <entry file="file://$PROJECT_DIR$/src/facebook/CloneGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
-          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/DiameterOfBinaryTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/MergeSortedArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/AccountsMerge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/NextPermutation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/MeetingRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/MeetingRooms_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/MergeKSortedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-263">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/MergeIntervals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/IntersectionOfTwoArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/CheckCompletenessOfBinayTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/AddString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/facebook/LongestArithmeticSequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
